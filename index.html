@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="darkBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+<div class="container">
+    <h1>Calorie Tracker</h1>
+
+    <div class="top-row">
+        <div class="date-box">
+            <label for="dateInput">Date:</label>
+            <input type="date" id="dateInput" onchange="changeDate()">
+        </div>
+
+        <div class="goal-box">
+            <label>Daily Calorie Goal:</label>
+            <input type="number" id="goalInput" placeholder="e.g. 2000">
+            <button onclick="setGoal()">Set Goal</button>
+            <p id="goalDisplay"></p>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
+
+    <div class="add-food-box">
+        <h2>Add Food</h2>
+        <input type="text" id="foodName" placeholder="Food name">
+        <input type="number" id="foodCalories" placeholder="Calories">
+        <div class="food-actions">
+            <button onclick="addFood()">Add</button>
+            <button onclick="searchFood()">Search Food</button>
+        </div>
+        <p id="searchResult"></p>
+    </div>
+
+    <h2>Log for <span id="dateLabel"></span></h2>
+    <ul id="foodList"></ul>
+
+    <h3>Total Calories: <span id="totalCalories">0</span></h3>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
